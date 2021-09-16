@@ -179,7 +179,7 @@ jobs:
     #  run: 7z a radare2-${{ steps.r2v.outputs.branch }}-w32.zip $PWD\radare2-${{ steps.r2v.outputs.branch }}-w32
     - uses: actions/upload-artifact@v2
       with:
-        name: radare2-${{ steps.r2v.outputs.branch }}-w32.zip
+        name: radare2-${{ steps.r2v.outputs.branch }}-w32
         path: radare2-${{ steps.r2v.outputs.branch }}-w32
 #    - uses: actions/checkout@v2
 #      with:
@@ -221,12 +221,12 @@ jobs:
         meson --buildtype=release --prefix=$PWD\radare2-${{ steps.r2v.outputs.branch }}-w64 build
         ninja -C build
         ninja -C build install
-    - name: Create zip artifact
-      run: 7z a radare2-${{ steps.r2v.outputs.branch }}-w64.zip $PWD\radare2-${{ steps.r2v.outputs.branch }}-w64
+    #- name: Create zip artifact
+    #  run: 7z a radare2-${{ steps.r2v.outputs.branch }}-w64.zip $PWD\radare2-${{ steps.r2v.outputs.branch }}-w64
     - uses: actions/upload-artifact@v2
       with:
-        name: radare2-${{ steps.r2v.outputs.branch }}-w64.zip
-        path: radare2-${{ steps.r2v.outputs.branch }}-w64.zip
+        name: radare2-${{ steps.r2v.outputs.branch }}-w64
+        path: radare2-${{ steps.r2v.outputs.branch }}-w64
 #    - uses: actions/checkout@v2
 #      with:
 #        repository: radareorg/radare2-win-installer
